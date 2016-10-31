@@ -150,7 +150,7 @@ Most of the size is due to the flexdashboard interface (multiple pages & tab adj
 
 There is a trade off between the complexity of the page (mobile compatible or not, multiple pages, etc.) and the size of the page.
 
-### Selection (integer) {data-width=200}
+### Selection (integer between 1 and 645) {data-width=200}
 
 <input type="integer" class="form-control" id="myid" value="1" style = "width: 90%;">
 
