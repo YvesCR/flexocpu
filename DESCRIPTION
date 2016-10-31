@@ -1,0 +1,10 @@
+Package: flexocpu
+Type: Package
+Title: Flexdashboard with opencpu
+Version: 0.1.0
+Author: person("Yves", "Crutain", email = "yves.crutain@gmail.com",
+  role = c("aut", "cre"))
+Description: Example of using ocpu as a back end for a flexdashboard
+License: Apache 2.0
+Encoding: UTF-8
+LazyData: true

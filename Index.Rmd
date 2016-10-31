@@ -1,0 +1,255 @@
+---
+title: "Front-end test"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: cerulean
+    orientation: rows
+    logo: testlogo.png
+    social: [ "twitter", "facebook", "menu" ]
+---
+
+<script src="inst/www/jquery-1.10.2.min.js"> </script>
+<script src="inst/www/opencpu-0.4.js"> </script>
+
+<script> 
+
+$(function(){
+    
+  var paramid = 1;
+
+  $('#myBtn').click( function () {
+    
+    $('#myBtn').hide();
+    $('iframe').css({'display': 'inline'}); 
+    
+    var req2 = ocpu.call("make_map", {
+        title : 'Chez Mamie'
+      }, function(session){
+        $('iframe').attr('src', session.getFileURL('mymap.html'));
+      });
+  });
+
+  var jsonReqtime = ocpu.call("gethowel",{
+      		id : Number(paramid)
+      	}, function(session){
+      	
+      	session.getObject(function(outtxt){
+      		$("#json_output").text(outtxt);
+      		
+      		var age_json = JSON.parse(outtxt[0])[0]["age"];
+      		$('#age .value').text(age_json);
+      		 if (age_json <= 21) {var color_age = '#01bb69';
+      		  } else if (age_json <= 60) {var color_age = '#ff8039';
+      	      } else {var color_age = '#fb305a';}
+      		$('#age').css("background-color", color_age);
+      		
+      		var height_json = JSON.parse(outtxt[0])[0]["height"];
+      		$('#height .value').text(height_json);
+      		 if (height_json <= 140) {var color_income = '#ff8039';
+      		  } else if (height_json >= 160) {var color_income = '#fb305a';
+      	      } else {var color_income = '#01bb69';}
+      		$('#height').css("background-color", color_income);
+      		
+      		var weight_json = JSON.parse(outtxt[0])[0]["weight"];
+      		$('#weight .value').text(weight_json);
+      		 if (weight_json <= 20) {var color_asset = '#ff8039';
+      		  } else if (weight_json <= 40) {var color_asset = '#fb305a';
+      	      } else {var color_asset = '#01bb69';}
+      		$('#weight').css("background-color", color_asset);
+      		
+      		$('#id .value').text(JSON.parse(outtxt[0])[0]["id"]);
+      		
+      		var male_json = JSON.parse(outtxt[0])[0]["male"];
+      		$('#sex .value').text(male_json);
+      			 if (male_json === 0) {var color_male = '#ae6df8';
+      		  } else {var color_male = '#02a8ee';}
+      		$('#sex').css("background-color", color_male);
+      		
+      	});
+  });
+  
+  var req = $("#plotdiv").rplot("plotind", {id : Number(paramid)});
+  var req = $("#plotdivsex").rplot("plotindsex", {id : Number(paramid)});
+  var req = $("#plotdivsex2").rplot("plotindsex2", {id : Number(paramid)});
+
+});
+
+$(function(){
+  $("#idsubmit").click(function(e){
+  
+  var paramid = $("#myid").val();
+  
+  var jsonReqtime = ocpu.call("gethowel",{
+    		id : Number(paramid)
+    	}, function(session){
+    	
+    	session.getObject(function(outtxt){
+    		$("#json_output").text(outtxt);
+    		
+      		var age_json = JSON.parse(outtxt[0])[0]["age"];
+      		$('#age .value').text(age_json);
+      		 if (age_json <= 21) {var color_age = '#01bb69';
+      		  } else if (age_json <= 60) {var color_age = '#ff8039';
+      	      } else {var color_age = '#fb305a';}
+      		$('#age').css("background-color", color_age);
+      		
+      		var height_json = JSON.parse(outtxt[0])[0]["height"];
+      		$('#height .value').text(height_json);
+      		 if (height_json <= 140) {var color_income = '#ff8039';
+      		  } else if (height_json >= 160) {var color_income = '#fb305a';
+      	      } else {var color_income = '#01bb69';}
+      		$('#height').css("background-color", color_income);
+      		
+      		var weight_json = JSON.parse(outtxt[0])[0]["weight"];
+      		$('#weight .value').text(weight_json);
+      		 if (weight_json <= 20) {var color_asset = '#ff8039';
+      		  } else if (weight_json <= 40) {var color_asset = '#fb305a';
+      	      } else {var color_asset = '#01bb69';}
+      		$('#weight').css("background-color", color_asset);
+      		
+      		$('#id .value').text(JSON.parse(outtxt[0])[0]["id"]);
+      		
+      		var male_json = JSON.parse(outtxt[0])[0]["male"];
+      		$('#sex .value').text(male_json);
+      			 if (male_json === 0) {var color_male = '#ae6df8';
+      		  } else {var color_male = '#02a8ee';}
+      		$('#sex').css("background-color", color_male);
+      		    		
+    	});
+    });
+    
+    var req = $("#plotdiv").rplot("plotind", {id : Number(paramid)});
+    var req = $("#plotdivsex").rplot("plotindsex", {id : Number(paramid)});
+  var req = $("#plotdivsex2").rplot("plotindsex2", {id : Number(paramid)});
+
+  });
+
+});
+  
+</script>
+
+```{r setup, include=FALSE}
+# devtools::install_github("Rstudio/flexdashboard")
+library(flexdashboard)
+```
+
+Page 1
+===================================== 
+
+Row {data-height=200}
+-------------------------------------
+
+### Definition {data-width=800}
+
+Test for a dashboard with opencpu.
+Loading a page is slow due to the size of the web page loaded: so far 1.4 Mb.
+
+Most of the size is due to the flexdashboard interface (multiple pages & tab adjustment).
+
+There is a trade off between the complexity of the page (mobile compatible or not, multiple pages, etc.) and the size of the page.
+
+### Selection (integer) {data-width=200}
+
+<input type="integer" class="form-control" id="myid" value="1" style = "width: 90%;">
+
+<button type="submit" id="idsubmit" class="btn btn-default">Update dashboard!</button>
+ 
+Row {data-height=200}
+-----------------------------------------------------------------------
+
+### Age
+
+```{r valuebox1}
+valueBox(0, icon = "fa-pencil", color = '#01bb69')
+```
+
+### Height
+
+```{r valuebox2}
+valueBox(0, icon = "fa-envelope-o", color = '#ff8039')
+```
+
+### Weight
+
+```{r valuebox3}
+valueBox(0, icon = "fa-trash", color = '#fb305a')
+```
+
+### Id
+
+```{r}
+valueBox(0, icon = "fa-puzzle-piece")
+```
+
+### Sex
+
+```{r}
+valueBox(0, icon = "fa-money", color = '#02a8ee')
+```
+
+Row {data-height=200}
+-----------------------------------------------------------------------
+
+### Indicator 1
+
+```{r}
+gauge(90, min = 0, max = 100, gaugeSectors(
+  success = c(80, 100), warning = c(40, 79), danger = c(0, 39)
+))
+```
+
+### Indicator 2
+
+```{r}
+gauge(30, min = 0, max = 100, gaugeSectors(
+  success = c(41, 50), warning = c(21, 40), danger = c(0, 20)
+))
+```
+
+### Indicator 3
+
+```{r}
+gauge(8, min = 0, max = 100, gaugeSectors(
+  success = c(0, 2), warning = c(3, 6), danger = c(7, 10)
+))
+```
+
+Row {data-height=400}
+-----------------------------------------------------------------------
+
+### Age, Weight and Height Graphs
+
+<div id="plotdiv" style='height: 270px'></div> 
+
+Page 2
+===================================== 
+
+Row {data-height=300}
+-----------------------------------------------------------------------
+
+### Age Height by Sex
+
+```{r, fig.width=15}
+data("howell")
+
+ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = height, color = male)) +
+  ggplot2::geom_point()
+```
+
+### Age Weight by Sex
+
+```{r, fig.width=15}
+data("howell")
+
+ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = weight, color = male)) +
+  ggplot2::geom_point()
+```
+
+Row {data-height=700}
+-----------------------------------------------------------------------
+
+### Mapping
+
+<button type="button" id="myBtn" >Map</button>
+
+<iframe src="about:blank" style='height: 620px;width: 1300px;display: none;'></iframe>
