@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "\n# install.packages(\"jsonlite\")\n\n# check location:\ngetwd() # should be your project location\n\n## index build process:\nrmarkdown::render(input=\"index.Rmd\", output_file=\"inst/www/index.html\")\n\n## Package build process:\nopencpu::opencpu$stop()\ndevtools::build()\ndevtools::install()\nopencpu::opencpu$start(port = 3000)\n\n# Point browser to individual 1: (shift+click to open)\nbrowseURL(\"http://localhost:3000/ocpu/library/opencputest/www/index.html\")\n\n\n## alternative version: building the package and not stopping the server:\n# one time only: start server:\n # opencpu::opencpu$start(port = 3000)\nrmarkdown::render(input=\"index.Rmd\", output_file=\"inst/www/index.html\")\ndevtools::build()\ndevtools::install()\nbrowseURL(\"http://localhost:3000/ocpu/library/opencputest/www/index.html\")\n",
+    "contents" : "\n# install.packages(\"jsonlite\")\n\n# check location:\ngetwd() # should be your project location\n\n## index build process:\nrmarkdown::render(input=\"index.Rmd\", output_file=\"inst/www/index.html\")\n\n## Package build process:\nopencpu::opencpu$stop()\ndevtools::build()\ndevtools::install()\nopencpu::opencpu$start(port = 3000)\n\n# Point browser to individual 1: (shift+click to open)\nbrowseURL(\"http://localhost:3000/ocpu/library/flexocpu/www/index.html\")\n\n\n## alternative version: building the package and not stopping the server:\n# one time only: start server:\n # opencpu::opencpu$start(port = 3000)\nrmarkdown::render(input=\"index.Rmd\", output_file=\"inst/www/index.html\")\ndevtools::build()\ndevtools::install()\nbrowseURL(\"http://localhost:3000/ocpu/library/opencputest/www/index.html\")\n",
     "created" : 1477938895981.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3889926774",
+    "hash" : "2867070197",
     "id" : "BC9DBDF9",
-    "lastKnownWriteTime" : 1477938944,
-    "last_content_update" : 1477938944732,
+    "lastKnownWriteTime" : 1477941169,
+    "last_content_update" : 1477941169248,
     "path" : "~/GitHub/flexocpu/setup_package_index.r",
     "project_path" : "setup_package_index.r",
     "properties" : {

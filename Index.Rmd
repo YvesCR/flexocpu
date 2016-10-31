@@ -1,11 +1,13 @@
 ---
-title: "Front-end test"
+title: "Flexdashboard with opencpu back-end"
 output: 
   flexdashboard::flex_dashboard:
     theme: cerulean
     orientation: rows
     logo: testlogo.png
-    social: [ "twitter", "facebook", "menu" ]
+    social: [ "twitter", "facebook"]
+    navbar:
+      - { title: "About", href: "http://data-laborer.eu", align: right }
 ---
 
 <script src="inst/www/jquery-1.10.2.min.js"> </script>

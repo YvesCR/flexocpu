@@ -14,7 +14,7 @@ devtools::install()
 opencpu::opencpu$start(port = 3000)
 
 # Point browser to individual 1: (shift+click to open)
-browseURL("http://localhost:3000/ocpu/library/opencputest/www/index.html")
+browseURL("http://localhost:3000/ocpu/library/flexocpu/www/index.html")
 
 
 ## alternative version: building the package and not stopping the server:
