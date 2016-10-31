@@ -8,6 +8,7 @@ output:
     social: [ "twitter", "facebook"]
     navbar:
       - { title: "About", href: "http://data-laborer.eu", align: right }
+    source_code: "https://github.com/YvesCR/flexocpu"
 ---
 
 <script src="inst/www/jquery-1.10.2.min.js"> </script>
