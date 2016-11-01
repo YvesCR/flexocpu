@@ -1,5 +1,8 @@
 
 # install.packages("jsonlite")
+remove.packages("jsonlite")
+devtools::install_version(package = "jsonlite", version = "1.0")
+
 
 # check location:
 getwd() # should be your project location
