@@ -22,7 +22,7 @@ gethowel <- function(id) {
     res$weight <- round(res$weight, digits = 1)
   } else stop("Out of range")
 
-  return(jsonlite::toJSON(res))
+  return(res)
 
 }
 #' plotind

@@ -39,30 +39,30 @@ $(function(){
       	session.getObject(function(outtxt){
       		$("#json_output").text(outtxt);
       		
-      		var age_json = JSON.parse(outtxt[0])[0]["age"];
+      		var age_json = outtxt[0]["age"];
       		$('#age .value').text(age_json);
       		 if (age_json <= 21) {var color_age = '#01bb69';
       		  } else if (age_json <= 60) {var color_age = '#ff8039';
       	      } else {var color_age = '#fb305a';}
       		$('#age').css("background-color", color_age);
       		
-      		var height_json = JSON.parse(outtxt[0])[0]["height"];
+      		var height_json = outtxt[0]["height"];
       		$('#height .value').text(height_json);
       		 if (height_json <= 140) {var color_income = '#ff8039';
       		  } else if (height_json >= 160) {var color_income = '#fb305a';
       	      } else {var color_income = '#01bb69';}
       		$('#height').css("background-color", color_income);
       		
-      		var weight_json = JSON.parse(outtxt[0])[0]["weight"];
+      		var weight_json = outtxt[0]["weight"];
       		$('#weight .value').text(weight_json);
       		 if (weight_json <= 20) {var color_asset = '#ff8039';
       		  } else if (weight_json <= 40) {var color_asset = '#fb305a';
       	      } else {var color_asset = '#01bb69';}
       		$('#weight').css("background-color", color_asset);
       		
-      		$('#id .value').text(JSON.parse(outtxt[0])[0]["id"]);
+      		$('#id .value').text(outtxt[0]["id"]);
       		
-      		var male_json = JSON.parse(outtxt[0])[0]["male"];
+      		var male_json = outtxt[0]["male"];
       		$('#sex .value').text(male_json);
       			 if (male_json === 0) {var color_male = '#ae6df8';
       		  } else {var color_male = '#02a8ee';}
@@ -89,30 +89,30 @@ $(function(){
     	session.getObject(function(outtxt){
     		$("#json_output").text(outtxt);
     		
-      		var age_json = JSON.parse(outtxt[0])[0]["age"];
+      		var age_json = outtxt[0]["age"];
       		$('#age .value').text(age_json);
       		 if (age_json <= 21) {var color_age = '#01bb69';
       		  } else if (age_json <= 60) {var color_age = '#ff8039';
       	      } else {var color_age = '#fb305a';}
       		$('#age').css("background-color", color_age);
       		
-      		var height_json = JSON.parse(outtxt[0])[0]["height"];
+      		var height_json = outtxt[0]["height"];
       		$('#height .value').text(height_json);
       		 if (height_json <= 140) {var color_income = '#ff8039';
       		  } else if (height_json >= 160) {var color_income = '#fb305a';
       	      } else {var color_income = '#01bb69';}
       		$('#height').css("background-color", color_income);
       		
-      		var weight_json = JSON.parse(outtxt[0])[0]["weight"];
+      		var weight_json = outtxt[0]["weight"];
       		$('#weight .value').text(weight_json);
       		 if (weight_json <= 20) {var color_asset = '#ff8039';
       		  } else if (weight_json <= 40) {var color_asset = '#fb305a';
       	      } else {var color_asset = '#01bb69';}
       		$('#weight').css("background-color", color_asset);
       		
-      		$('#id .value').text(JSON.parse(outtxt[0])[0]["id"]);
+      		$('#id .value').text(outtxt[0]["id"]);
       		
-      		var male_json = JSON.parse(outtxt[0])[0]["male"];
+      		var male_json = outtxt[0]["male"];
       		$('#sex .value').text(male_json);
       			 if (male_json === 0) {var color_male = '#ae6df8';
       		  } else {var color_male = '#02a8ee';}

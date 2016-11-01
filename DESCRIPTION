@@ -8,7 +8,6 @@ Description: Example of using ocpu as a back end for a flexdashboard
 Depends:
     R (>= 2.10),
     magrittr,
-    jsonlite,
     leaflet,
     ggplot2,
     grid,
