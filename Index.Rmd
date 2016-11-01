@@ -235,7 +235,7 @@ Row {data-height=300}
 ```{r, fig.width=15}
 data("howell")
 
-ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = height, color = male)) +
+ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = height, color = as.factor(male))) +
   ggplot2::geom_point()
 ```
 
@@ -244,7 +244,7 @@ ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = height, color = male)) 
 ```{r, fig.width=15}
 data("howell")
 
-ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = weight, color = male)) +
+ggplot2::ggplot(data = howell, ggplot2::aes(x = age, y = weight, color = as.factor(male))) +
   ggplot2::geom_point()
 ```
 
