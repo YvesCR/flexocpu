@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "Package: flexocpu\nType: Package\nTitle: Flexdashboard with opencpu\nVersion: 0.1.0\nAuthor: person(\"Yves\", \"Crutain\", email = \"yves.crutain@gmail.com\",\n  role = c(\"aut\", \"cre\"))\nDescription: Example of using ocpu as a back end for a flexdashboard\nLicense: Apache 2.0\nEncoding: UTF-8\nLazyData: true\n",
+    "contents" : "Package: flexocpu\nType: Package\nTitle: Flexdashboard with opencpu\nVersion: 0.1.0\nAuthor: person(\"Yves\", \"Crutain\", email = \"yves.crutain@gmail.com\",\n  role = c(\"aut\", \"cre\"))\nDescription: Example of using ocpu as a back end for a flexdashboard\nDepends:\n    R (>= 2.10),\n    magrittr,\n    jsonlite,\n    leaflet,\n    ggplot2,\n    grid,\n    flexdashboard\nLicense: Apache 2.0\nEncoding: UTF-8\nLazyData: true\n",
     "created" : 1477939029422.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3932730976",
+    "hash" : "472080319",
     "id" : "5A8AD787",
-    "lastKnownWriteTime" : 1477939213,
-    "last_content_update" : 1477939213642,
+    "lastKnownWriteTime" : 1477993620,
+    "last_content_update" : 1477993620115,
     "path" : "~/GitHub/flexocpu/DESCRIPTION",
     "project_path" : "DESCRIPTION",
     "properties" : {

@@ -36,6 +36,7 @@ plotind <- function(id = 1) {
   # howell <- read.table("../Howel1.txt", header = T, sep = ";")
   # save(howell, file= "data/howell.Rdata")
 
+  # http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
   multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
     library(grid)
 
@@ -97,49 +98,6 @@ plotind <- function(id = 1) {
 
   return(plot.gg)
 
-}
-#' plot.dt
-#'
-#' return the html of htmlwidget, method 1
-#'
-#' @export
-#'
-plot.dt <- function(id = 1){
-  # id <- 5
-  # howell <- read.table("../Howel1.txt", header = T, sep = ";")
-  # save(howell, file= "data/howell.Rdata")
-
-  data("howell")
-
-  my.tab <- DT::datatable(howell, options = list(dom = 'tip')
-                  , fillContainer=T
-                  , width = '1020px'
-                  , height = '350px')
-
-  htmlwidgets::saveWidget(my.tab, "mytab.html", selfcontained = FALSE)
-
-}
-#' plot.html
-#'
-#' return the html of htmlwidget, method 2
-#'
-#' @export
-#'
-plot.html <- function(id = 1){
-  # id <- 5
-  # howell <- read.table("../Howel1.txt", header = T, sep = ";")
-  # save(howell, file= "data/howell.Rdata")
-
-  data("howell")
-
-  my.tab <- DT::datatable(howell, options = list(dom = 'tip')
-                          , fillContainer=T
-                          , width = '1020px'
-                          , height = '350px')
-
-    out <- unclass(htmlwidgets:::toHTML(my.tab))
-    print(paste(out[[1]], out[[2]], sep="\n"))
-    return(paste(out[[1]], out[[2]], sep="\n"))
 }
 #' leaflet widget
 #'
