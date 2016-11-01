@@ -145,8 +145,8 @@ Row {data-height=200}
 ### Definition {data-width=800}
 
 Test for a dashboard with opencpu.
-Loading a page is slow due to the size of the web page loaded: so far 1.4 Mb.
 
+Loading a page is slow due to the size of the web page loaded: so far 1.4 Mb.
 Most of the size is due to the flexdashboard interface (multiple pages & tab adjustment).
 
 There is a trade off between the complexity of the page (mobile compatible or not, multiple pages, etc.) and the size of the page.
