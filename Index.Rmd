@@ -72,8 +72,6 @@ $(function(){
   });
   
   var req = $("#plotdiv").rplot("plotind", {id : Number(paramid)});
-  var req = $("#plotdivsex").rplot("plotindsex", {id : Number(paramid)});
-  var req = $("#plotdivsex2").rplot("plotindsex2", {id : Number(paramid)});
 
 });
 
@@ -122,8 +120,6 @@ $(function(){
     });
     
     var req = $("#plotdiv").rplot("plotind", {id : Number(paramid)});
-    var req = $("#plotdivsex").rplot("plotindsex", {id : Number(paramid)});
-  var req = $("#plotdivsex2").rplot("plotindsex2", {id : Number(paramid)});
 
   });
 
