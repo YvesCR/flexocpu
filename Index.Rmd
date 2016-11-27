@@ -11,13 +11,17 @@ output:
     source_code: "https://github.com/YvesCR/flexocpu"
 ---
 
-<script src="inst/www/jquery-1.10.2.min.js"> </script>
-<script src="inst/www/opencpu-0.4.js"> </script>
+```{r, echo=FALSE}
+htmltools::tags$script(src = "//code.jquery.com/jquery-1.11.1.min.js")
+htmltools::tags$script(src = "//cdn.opencpu.org/opencpu-0.4.js")
+```
 
 <script> 
 
 $(function(){
-    
+
+$('#dashboard-container').css({'visibility': 'visible'}); 
+
   var paramid = 1;
 
   $('#myBtn').click( function () {
@@ -149,10 +153,12 @@ There is a trade off between the complexity of the page (mobile compatible or no
 
 ### Selection (integer between 1 and 544) {data-width=200}
 
-<input type="integer" class="form-control" id="myid" value="1" style = "width: 90%;">
+```{r}
+htmltools::tags$input(type="integer", class="form-control", id="myid", value="1", style = "width: 90%")
 
-<button type="submit" id="idsubmit" class="btn btn-default">Update dashboard!</button>
- 
+htmltools::tags$button("Update dashboard!", type="submit", id="idsubmit", class="btn btn-default")
+```
+
 Row {data-height=200}
 -----------------------------------------------------------------------
 
@@ -218,7 +224,9 @@ Row {data-height=400}
 
 ### Age, Weight and Height Graphs
 
-<div id="plotdiv" style='height: 270px'></div> 
+```{r}
+htmltools::tags$div(id="plotdiv", style="height: 270px")
+```
 
 Page 2
 ===================================== 
@@ -249,6 +257,9 @@ Row {data-height=700}
 
 ### Mapping
 
-<button type="button" id="myBtn" >Map</button>
+```{r}
 
-<iframe src="about:blank" style='height: 620px;width: 1300px;display: none;'></iframe>
+htmltools::tags$button("Map", type="button", id="myBtn")
+htmltools::tags$iframe(src="about:blank", style='height: 620px;width: 1300px;display: none;')
+
+```
