@@ -43,7 +43,7 @@ plotind <- function(id = 1) {
     # Make a list from the ... arguments and plotlist
     plots <- c(list(...), plotlist)
 
-    numPlots = length(plots)
+    numPlots <- length(plots)
 
     # If layout is NULL, then use 'cols' to determine layout
     if (is.null(layout)) {
